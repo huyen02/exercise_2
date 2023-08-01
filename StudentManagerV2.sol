@@ -38,6 +38,7 @@ contract StudentManagerV2 {
         uint256 _age,
         string memory _idCard
     ) external {
+
          require(isRegisteredStudent(msg.sender), "Student is already registered");
 
     bool isPendingRequest = false;
@@ -54,6 +55,7 @@ contract StudentManagerV2 {
         studentRegistrationRequests.push(student);
     }
 }
+
 
     function listRegistrationRequests()
         external
