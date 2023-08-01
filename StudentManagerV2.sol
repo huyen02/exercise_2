@@ -38,10 +38,22 @@ contract StudentManagerV2 {
         uint256 _age,
         string memory _idCard
     ) external {
-    
+         require(isRegisteredStudent(msg.sender), "Student is already registered");
+
+    bool isPendingRequest = false;
+    for (uint256 i = 0; i < studentRegistrationRequests.length; i++) {
+        if (studentRegistrationRequests[i].walletAddress == msg.sender) {
+            isPendingRequest = true;
+            revert("There is a pending registration request for this student");
+        }
+    }
+
+    if (isPendingRequest) {
+        
         Student memory student = Student(msg.sender, _name, _age, _idCard);
         studentRegistrationRequests.push(student);
     }
+}
 
     function listRegistrationRequests()
         external
