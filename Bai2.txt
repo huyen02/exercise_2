@@ -1,0 +1,9 @@
+Khi bị conflict thì sẽ xử lý như thế nào?
+- Bước 1: Sử dụng git status để xem danh sách tệp có xung đột. 
+- Bước 2: Mở tệp chứa xung đột để xem và sửa các đoạn code gây xung đột
+- Bước 3: Thêm tệp và stage, sử dụng git add và commit để hoàn thành 
+Có cách nào để hạn chế conflict không?
+Cách hạn chế: 
+-Luôn cập nhật trước khi làm 
+- Sử dụng nhánh riêng biệt
+- Liên tục commit 
